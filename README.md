@@ -1,3 +1,7 @@
+To excute the login application. Run the below commands in terminal:-
+1) Run npm install
+2) Run ng serve --open
+
 # AdminLogin
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.5.
