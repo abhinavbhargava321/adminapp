@@ -10,7 +10,6 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './admin/login/login.component';
 import { RegisterComponent } from './admin/register/register.component';
 import { ForgotPasswordComponent } from './admin/forgot-password/forgot-password.component';
-import { VerifyEmailComponent } from './admin/verify-email/verify-email.component';
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 
 @NgModule({
@@ -19,7 +18,6 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
     LoginComponent,
     RegisterComponent,
     ForgotPasswordComponent,
-    VerifyEmailComponent,
     DashboardComponent
   ],
   imports: [
@@ -27,7 +25,7 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
     FormsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

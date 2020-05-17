@@ -4,7 +4,6 @@ import { ForgotPasswordComponent } from './admin/forgot-password/forgot-password
 import { DashboardComponent } from './admin/dashboard/dashboard.component';
 import { LoginComponent } from './admin/login/login.component';
 import { RegisterComponent } from './admin/register/register.component';
-import { VerifyEmailComponent } from './admin/verify-email/verify-email.component';
 
 
 const routes: Routes = [
@@ -12,8 +11,7 @@ const routes: Routes = [
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'register', component: RegisterComponent },
-  { path: 'verify-email', component: VerifyEmailComponent }
+  { path: 'register', component: RegisterComponent }
 ];
 
 @NgModule({

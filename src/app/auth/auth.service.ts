@@ -23,8 +23,10 @@ export class AuthService {
   }
 
   async login(email: string, password: string) {
-    var result = await this.afAuth.signInWithEmailAndPassword(email, password);
-    this.router.navigate(['dashboard']);
+    var result = await this.afAuth.signInWithEmailAndPassword(email, password).then(() => {
+      localStorage.setItem('isLogin', null);
+      this.router.navigate(['dashboard']);
+    });
   }
 
   async register(email: string, password: string) {
@@ -35,16 +37,17 @@ export class AuthService {
 
   async sendEmailVerification() {
     await (await this.afAuth.currentUser).sendEmailVerification();
-    this.router.navigate(['verify-email']);
+    this.router.navigate(['login']);
   }
 
   async sendPasswordResetEmail(passwordResetEmail: string) {
-    console.log(passwordResetEmail);
-    return await this.afAuth.sendPasswordResetEmail(passwordResetEmail);
+    await this.afAuth.sendPasswordResetEmail(passwordResetEmail);
+    this.router.navigate(['login']);
   }
 
   async logout(){
     await this.afAuth.signOut();
+    localStorage.removeItem('isLogin');
     localStorage.removeItem('user');
     this.router.navigate(['login']);
   }
