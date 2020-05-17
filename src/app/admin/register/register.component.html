@@ -1,0 +1,27 @@
+<div class="form-bg">
+    <div class="container">
+        <img class="img-fluid form-logo" src="assets/images/logo-white.svg" alt="" />
+        <div class="form-wrapper">
+            <h2><b>Create Account</b></h2>
+            <form>
+                <div class="form-group">
+                    <input [(ngModel)]="email" name="email" type="text" placeholder="Email email address" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input [(ngModel)]="password" name="password" type="password" placeholder="Enter your password" class="form-control">
+                </div>
+                <div class="form-group mt-5">
+                    <button class="btn btn-primary d-block w-100" (click)="register()">Submit</button>
+                </div>
+                <div class="form-links row text-center">
+                    <div class="col-12">
+                        <p class="mb-0"><a href="javascript:void(0)" (click)="goTo('forgot-password')">Forgot your password?</a></p>
+                    </div>
+                    <div class="col-12">
+                        <p class="mb-0"><a href="javascript:void(0)" (click)="goTo('login')">Already user? Login</a></p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
