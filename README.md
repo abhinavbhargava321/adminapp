@@ -2,6 +2,12 @@ To excute the login application. Run the below commands in terminal:-
 1) Run npm install
 2) Run ng serve --open
 
+Following operations can be performed in this application:
+1) Login - An authenticated user can login into application & see the dashboard page on successful login. User must pass validation of email and password must be greater than 6 letters. I have created dummy account for testing purpose test@test.com / 123456.
+2) Register - A user can get registered & will get redirected to login page.
+3) Forgot Password - An email verification link will be sent to registered email id.
+4) Logout - User can log out from application & will be prohibited to access dashboard until he login again.
+
 # AdminLogin
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.5.
