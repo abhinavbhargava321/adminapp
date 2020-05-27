@@ -10,11 +10,12 @@ import { AuthService } from  '../../auth/auth.service';
 export class LoginComponent implements OnInit {
   email: string;
   password: string;
-  title = "Welcome Back, Login";
+  title: string;
 
   constructor(private  authService:  AuthService, public  router:  Router) {}
 
   ngOnInit(): void {
+    this.title = "Welcome Back, Login";
   }
 
   login() {

@@ -1,6 +1,7 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { browser } from 'protractor';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -30,6 +31,6 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('admin-login app is running!');
+    expect(compiled.querySelector('h1').textContent).toContain('admin-login');
   });
 });

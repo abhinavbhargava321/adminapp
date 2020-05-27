@@ -6,7 +6,7 @@ describe('Login tests', () => {
         page.navigateTo();        
     });
 
-    it('should display Login page', () => {
+    it('should display title', () => {
         expect(page.getTitle().getText()).toEqual('Welcome Back, Login');
     });
     

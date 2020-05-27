@@ -21,11 +21,11 @@ import { DashboardComponent } from './admin/dashboard/dashboard.component';
     DashboardComponent
   ],
   imports: [
-    BrowserModule,
-    FormsModule,
-    AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
+    BrowserModule,
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

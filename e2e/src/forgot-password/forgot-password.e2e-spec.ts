@@ -6,7 +6,7 @@ describe('Forget password tests', () => {
         page.navigateTo();        
     });
 
-    it('should display Forgot Password page', () => {
+    it('should display title', () => {
         expect(page.getTitle().getText()).toEqual('Forgot Password?');
     });
     

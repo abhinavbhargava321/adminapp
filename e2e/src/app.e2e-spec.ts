@@ -1,6 +1,5 @@
 import { AppPage } from './app.po';
 import { browser, logging } from 'protractor';
-import { Router } from  "@angular/router";
 
 describe('App tests', () => {
   let page: AppPage;
@@ -10,13 +9,9 @@ describe('App tests', () => {
     page.navigateTo();
   });
 
-  it('should render login page', () => {
-    console.log("router", spyOnProperty(spyRouter, 'url', 'get'));
-    // expect(browser.location.url()).toEqual('login');
-  });
-
-  it('should display welcome message', () => {
-    expect(page.getTitleText()).toEqual('Welcome Back, Login');
+  // should display login page as root page
+  it('should display login page as root page', () => {
+    expect(browser.getCurrentUrl()).toEqual(browser.baseUrl+'login');
   });
 
   afterEach(async () => {

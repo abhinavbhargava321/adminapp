@@ -9,10 +9,12 @@ import { AuthService } from  '../../auth/auth.service';
 })
 export class ForgotPasswordComponent implements OnInit {
   email: string;
+  title: string;
 
   constructor(private  authService:  AuthService, public  router:  Router) { }
 
   ngOnInit(): void {
+    this.title = "Forgot Password?";
   }
 
   forgotPassword() {

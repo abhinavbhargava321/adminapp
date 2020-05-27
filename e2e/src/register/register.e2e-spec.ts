@@ -6,7 +6,7 @@ describe('Register tests', () => {
         page.navigateTo();        
     });
 
-    it('should display Register page', () => {
+    it('should display title', () => {
         expect(page.getTitle().getText()).toEqual('Create Account');
     });
     

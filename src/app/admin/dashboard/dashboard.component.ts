@@ -9,6 +9,8 @@ import { Router } from  "@angular/router";
 })
 export class DashboardComponent implements OnInit {
   isLoggedIn: boolean;
+  title: string;
+
   constructor(private  authService:  AuthService, public  router:  Router) {
     if(!localStorage.getItem('isLogin')) {
       this.router.navigate(['login']);
@@ -16,6 +18,7 @@ export class DashboardComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.title = "Dashboard";
   }
 
   logout(){
