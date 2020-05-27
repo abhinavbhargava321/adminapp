@@ -10,6 +10,7 @@ import { AuthService } from  '../../auth/auth.service';
 export class LoginComponent implements OnInit {
   email: string;
   password: string;
+  title = "Welcome Back, Login";
 
   constructor(private  authService:  AuthService, public  router:  Router) {}
 
