@@ -24,4 +24,15 @@ describe('DashboardComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('Logout button click redirects to login page', () => {
+    fixture.detectChanges();
+    let buttonElements = fixture.debugElement.nativeElement.querySelector('.btn-logout');
+    expect(buttonElements.innerHTML).toContain('Logout');
+    buttonElements.click();
+    fixture.detectChanges();
+    fixture.whenStable().then(() => {
+      expect(location.pathname).toEqual('/login');
+    });
+  });
 });

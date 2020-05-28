@@ -5,6 +5,7 @@ import { AppModule } from '../app.module';
 
 describe('AuthService', () => {
   let service: AuthService;
+  const assert = require('assert');
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -18,27 +19,37 @@ describe('AuthService', () => {
   });
   
   it('should set isLoggedIn to be true on signUp', () => {
-    service.login("test@test.com", "123456");
-    expect(service.isLoggedIn).toBeTruthy();
+    expect(service.isLoggedIn).toBeDefined();
+    service.login("test@test.com", "123456").then(() => {
+      assert.equal(service.isLoggedIn, true);
+    });
   });
   
   it('should set isLoggedIn to be true on signUpfor already created user', () => {
-    service.register("test@test.com", "123");
-    expect(service.isLoggedIn).toBeFalsy();
+    expect(service.isLoggedIn).toBeDefined();
+    service.register("test@test.com", "123").then(() => {
+      assert.equal(service.isLoggedIn, false);
+    });
   });
 
   it('should set isLoggedIn to be true on login', () => {
-    service.login("test@test.com", "123456");
-    expect(service.isLoggedIn).toBeTruthy();
+    expect(service.isLoggedIn).toBeDefined();
+    service.login("test@test.com", "123456").then(() => {
+      assert.equal(service.isLoggedIn, true);
+    });
   });
 
   it('should set isLoggedIn to be false on login for wrong credentials', () => {
-    service.login("test@test.com", "123456789");
-    expect(service.isLoggedIn).toBeFalsy();
+    expect(service.isLoggedIn).toBeDefined();
+    service.login("test@test.com", "123456789").then(() => {
+      assert.equal(service.isLoggedIn, false);
+    });
   });
 
   it('should set isLoggedIn to be false on logout', () => {
-    service.logout();
-    expect(service.isLoggedIn).toBeFalsy();
+    expect(service.isLoggedIn).toBeDefined();
+    service.logout().then(() => {
+      assert.equal(service.isLoggedIn, false);
+    });
   });
 });
